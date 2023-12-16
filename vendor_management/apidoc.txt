@@ -1,0 +1,92 @@
+register
+=======
+localhost:8000/api/register/
+method:POST
+data:{username,email,password}
+
+token
+=======
+localhost:8000/api/login/
+method:POST
+data:{username,password}
+
+
+
+
+Vendors
+========
+Create a New Vendor:
+====================
+localhost:8000/api/vendors/
+method:POST
+data:{ name, contact details, address, unique vendor code.}
+authentication:token
+
+List all Vendors:
+=================
+localhost:8000/api/vendors/
+method:GET
+authentication:token
+
+Retrieve a Specific Vendor's Details:
+====================================
+localhost:8000/api/vendors/{vendor_id}/
+method:GET
+authentication:token
+
+Update a Vendor's Details:
+==========================
+localhost:8000/api/vendors/{vendor_id}/
+method:PUT
+data:{ name, contact details, address, unique vendor code.}
+authentication:token
+
+Delete a Vendor:
+================
+localhost:8000/api/vendors/{vendor_id}/
+method:DELETE
+authentication:token
+
+
+
+
+Purchase Orders
+===============
+Create a Purchase Order:
+=======================
+localhost:8000/api/purchase_orders/
+method:POST
+data:{  po_number,vendor,order_date,delivery_date,items,quantity,status,quality_rating(optional),issue_date,acknowledgment_date}
+authentication:token
+
+List all Purchase Orders:
+==========================
+localhost:8000/api/purchase_orders/
+method:GET
+Query Parameters: vendor (optional) to filter by vendor.
+
+Retrieve Details of a Specific Purchase Order:
+==============================================
+localhost:8000/api/purchase_orders/{po_id}/
+method:GET
+
+Update a Purchase Order:
+========================
+localhost:8000/api/purchase_orders/{po_id}/
+method:PUT
+data:{po_number,vendor,order_date,delivery_date,items,quantity,status,quality_rating(optional),issue_date,acknowledgment_date}
+authentication:token
+
+Delete a Purchase Order:
+=======================
+localhost:8000/api/purchase_orders/{po_id}/
+method:Delete
+
+
+
+
+Vendor Performance Metrics
+===============================================================
+localhost:8000/api/vendors/{vendor_id}/performance/
+method:GET
+authentication:token
